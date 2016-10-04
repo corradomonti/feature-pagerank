@@ -1,0 +1,63 @@
+2016-10-03 18:28:46,322 - INFO - Feature PageRank launched within Spark.
+
+Spark configuration:
+spark.akka.frameSize=1024
+spark.app.name=FeaturePagerank
+spark.default.parallelism=24
+spark.driver.maxResultSize=25g
+spark.driver.memory=55G
+spark.executor.cores=4
+spark.executor.instances=16
+spark.executor.memory=60G
+spark.files=file:/usr/local/spark/python/featurepagerank.py
+spark.master=spark://192.168.0.21:7077
+spark.rdd.compress=True
+spark.rpc.askTimeout=600
+spark.serializer.objectStreamReset=100
+spark.submit.deployMode=client
+
+2016-10-03 18:28:46,323 - INFO - FeaturePageRank configuration:
+delta_threshold=1e-12
+sample=None
+beta=0.05
+seed=123456789
+output_path=$HOME/features-pagerank//features-pagerank-2016-10-03_18.28/
+max_number_of_iterations=200
+n_top_to_save=5000
+sc=<pyspark.context.SparkContext object at 0x7f6a6efc20d0>
+alpha=0.8
+output_dir=$HOME/features-pagerank/
+
+2016-10-03 18:28:46,323 - INFO - Reading input files and computing ids of all the considered nodes...
+2016-10-03 20:24:06,611 - INFO - 15390361 considered nodes.
+2016-10-03 20:24:06,612 - INFO - Computing the association between features and nodes...
+2016-10-03 21:17:16,189 - INFO - 19619 features.
+2016-10-03 21:17:16,194 - INFO - Number of features per node statistics: (count: 15390361, mean: 3.2071053434, stdev: 8.92162859183, max: 2607.0, min: 1.0)
+2016-10-03 21:17:16,195 - INFO - Computing the graph and the transposed graph...
+2016-10-03 21:56:39,629 - INFO - Outdegrees statistics: (count: 15390361, mean: 6.04846143635, stdev: 13.2770551552, max: 3574.0, min: 0.0)
+2016-10-03 21:56:39,760 - INFO - Rank initialized. Starting pagerank iteration...
+2016-10-03 21:56:43,194 - INFO - Iteration 0. Computing each node contribution and broadcasting it...
+2016-10-03 22:05:28,262 - INFO - Iteration 0. Computing dangling nodes total contribution...
+2016-10-03 22:10:47,933 - INFO - Iteration 0. Computing new rank...
+2016-10-03 22:10:47,956 - INFO - Iteration 0. Computing delta...
+2016-10-03 22:53:53,862 - INFO - Iteration 0. Delta = 0.508578
+2016-10-03 23:06:19,218 - INFO - Iteration 0. Node rank statistics: (count: 15390361, mean: 3.21747591806e-08, stdev: 7.44695060507e-09, max: 7.18288435583e-06, min: 3.04492628613e-08)
+2016-10-03 23:06:33,210 - INFO - Iteration 0. Feat rank statistics: (count: 19619, mean: 2.48760940881e-05, stdev: 0.000121493333582, max: 0.00597332103335, min: 1.29786055561e-08)
+2016-10-03 23:08:35,411 - INFO - Iteration 0. Difference statistics: (count: 15390361, mean: 3.30452387749e-08, stdev: 6.2748072534e-09, max: 7.11790862199e-06, min: 5.07778652784e-14)
+2016-10-03 23:08:35,442 - INFO - Iteration 0. Saving node rank...
+2016-10-03 23:21:05,656 - INFO - Iteration 0. Saving feat rank...
+2016-10-03 23:21:17,307 - INFO - Iteration 0. Output saved in $HOME/features-pagerank//features-pagerank-2016-10-03_18.28/.
+2016-10-03 23:21:17,311 - INFO - Iteration 1. Computing each node contribution and broadcasting it...
+2016-10-04 00:14:29,150 - INFO - Iteration 1. Computing dangling nodes total contribution...
+2016-10-04 00:35:33,774 - INFO - Iteration 1. Computing new rank...
+2016-10-04 00:35:33,802 - INFO - Iteration 1. Computing delta...
+2016-10-04 01:01:45,235 - INFO - Iteration 1. Delta = 0.000000
+2016-10-04 01:14:18,492 - INFO - Iteration 1. Node rank statistics: (count: 15390361, mean: 3.43987452957e-08, stdev: 3.26262927675e-08, max: 9.70360177678e-06, min: 2.18436973846e-08)
+2016-10-04 01:14:29,800 - INFO - Iteration 1. Feat rank statistics: (count: 19619, mean: 1.23255661828e-05, stdev: 6.02166681208e-05, max: 0.00286063653052, min: 1.29786037614e-08)
+2016-10-04 01:40:32,823 - INFO - Iteration 1. Difference statistics: (count: 15390361, mean: 0.0, stdev: 0.0, max: 0.0, min: 0.0)
+2016-10-04 01:40:32,850 - INFO - Iteration 1. Saving node rank...
+2016-10-04 01:53:20,589 - INFO - Iteration 1. Saving feat rank...
+2016-10-04 01:53:34,156 - INFO - Iteration 1. Output saved in $HOME/features-pagerank//features-pagerank-2016-10-03_18.28/.
+2016-10-04 01:53:34,160 - INFO - Iteration 1. Delta   0.000000 smaller than   0.000000: stopping.
+2016-10-04 01:53:34,160 - INFO - Saving top 5000 feature names...
+2016-10-04 01:53:51,233 - INFO - Done.
